@@ -1,12 +1,29 @@
 <?php
-var_dump($_GET);
-echo $_GET["prod1"];
 
-$minArray = array();
+//variabler
+$kakStr ="";
+$kakArr = array();
 
-setcookie("onskelista", $_GET["prod1"], time() + 3600);
 
-echo $_COOKIE["onskelista"];
+var_dump($_COOKIE);
+//kolla om vi har kaka
+if(isset($_COOKIE["lista"])) {
+    $kakStr = $_COOKIE["lista"];
+    $kakArr = serialize($kakStr);
+} else {
+    setcookie("lista","tom aray",time()+10);
+    echo "kaka finns ej , skapar";
+}
+echo $kakStr;
+var_dump($kakArr);
+
+
+//läsa formulärdata
+if(isset($_GET["prod"])) {
+    array_push($kakArr, $_GET["prod"]);
+}
+//var_dump($kakArr);
+
 ?>
 
 
@@ -26,51 +43,95 @@ echo $_COOKIE["onskelista"];
                 Planka
                 
                 <input type="submit"> 
-                <input type="hidden" value="planka" name="prod1">
+                <input type="hidden" value="planka" name="prod">
             </form>
         </div>
         <div class="varor">
-            Säng
-            <button>Lägg till</button>
+            <form>
+                Säng
+                
+                <input type="submit"> 
+                <input type="hidden" value="sang" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Rådjur
-            <button>Lägg till</button>
+            <form>
+                Rådjur
+                
+                <input type="submit"> 
+                <input type="hidden" value="radjur" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Pilsner
-            <button>Lägg till</button>
+            <form>
+                Pilsner
+                
+                <input type="submit"> 
+                <input type="hidden" value="pilsner" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Chips
-            <button>Lägg till</button>
+            <form>
+                Chips
+                
+                <input type="submit"> 
+                <input type="hidden" value="chips" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Kalle Anka
-            <button>Lägg till</button>
+            <form>
+                Kalle Anka
+                
+                <input type="submit"> 
+                <input type="hidden" value="kalleanka" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Basker
-            <button>Lägg till</button>
+            <form>
+                Basker
+                
+                <input type="submit"> 
+                <input type="hidden" value="basker" name="prod">
+            </form>
         </div>  
         <div class="varor">
-            Hårddisk
-            <button>Lägg till</button>
+            <form>
+                Hårddisk
+                
+                <input type="submit"> 
+                <input type="hidden" value="harddisk" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Bongo
-            <button>Lägg till</button>
+            <form>
+                Bongo
+                
+                <input type="submit"> 
+                <input type="hidden" value="bongo" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Mobiltelefon
-            <button>Lägg till</button>
+            <form>
+                Mobiltelefon
+                
+                <input type="submit"> 
+                <input type="hidden" value="mobiltelefon" name="prod">
+            </form>
         </div>
         <div class="varor">
-            Strömkabel
-            <button>Lägg till</button>
+            <form>
+                Strömkabel
+                
+                <input type="submit"> 
+                <input type="hidden" value="stromkabel" name="prod">
+            </form>
         </div>  <div class="varor">
-            Chokladboll
-            <button>Lägg till</button>
+            <form>
+                Chokladboll
+                
+                <input type="submit"> 
+                <input type="hidden" value="chokladboll" name="prod">
+            </form>
         </div>
 
 
