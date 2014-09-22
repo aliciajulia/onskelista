@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.varor {
+    float: left;
+    height: 100px;
+    width: 100px;
+    outline: thin solid black;
+}
+
